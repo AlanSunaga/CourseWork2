@@ -17,7 +17,7 @@ public class JavaQuestionController {
         this.javaQuestionService = javaQuestionService;
     }
 
-    @PostMapping("/add/{question}/{answer}")
+    @GetMapping("/add")
     public Question addQuestion(@RequestParam String question,
                                 @RequestParam String answer) {
         return javaQuestionService.addQuestion(question, answer);
@@ -28,7 +28,7 @@ public class JavaQuestionController {
         return javaQuestionService.getAll();
     }
 
-    @DeleteMapping("/remove")
+    @GetMapping("/remove")
     public Question removeQuestion(@RequestParam String question,
                                    @RequestParam String answer) {
         Question questionToRemove = new Question(question, answer);
